@@ -60,6 +60,10 @@ class User extends Authenticatable
         return $this->email;
     }
 
+    /**
+     * Get the deleted_at of the user
+     * @return mixed
+     */
     public function getDeletedAt()
     {
         return $this->deleted_at;
@@ -76,5 +80,14 @@ class User extends Authenticatable
             "email" => $this->email,
             "name" => $this->name
         ];
+    }
+
+    /**
+     * List use's posts
+     * @return array<Post>
+     */
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
     }
 }

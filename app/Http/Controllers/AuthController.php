@@ -58,6 +58,7 @@ class AuthController extends Controller
                 "message" => "The provided credentials are incorrect."
             ], 401);
         }
+        
         if ($user->getDeletedAt()) {
             return response()->json([
                 "message" => "Your account has been deleted, you can create a new one"
